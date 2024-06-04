@@ -54,9 +54,10 @@ export function NavBar({ absoluteDropdown = false }: { absoluteDropdown?: boolea
       </div>
       <nav
         className={cn(
-          "grid w-full gap-4 overflow-hidden bg-background transition-[max-height] duration-500 lg:hidden",
+          "grid w-screen gap-4 overflow-hidden bg-background transition-[max-height] duration-500 lg:hidden",
           isMenuOpen ? "max-h-40" : "max-h-0",
-          absoluteDropdown && "absolute bg-background/50 backdrop-blur-md",
+          absoluteDropdown &&
+            "container absolute left-0 bg-background/50 backdrop-blur-md",
         )}
       >
         <div className="grid gap-2 overflow-hidden py-2">{getLinks()}</div>
