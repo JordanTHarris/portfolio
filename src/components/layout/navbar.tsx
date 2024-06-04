@@ -5,7 +5,7 @@ import { ThemeToggle } from "@/components/shared/theme-toggle";
 import { cn } from "@/lib/utils";
 import { Menu } from "lucide-react";
 
-export function NavBar() {
+export function NavBar({ absoluteDropdown = false }: { absoluteDropdown?: boolean }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function toggleMenu() {
@@ -24,6 +24,7 @@ export function NavBar() {
       <NavLink
         key={link.title}
         to={link.path}
+        onClick={() => setIsMenuOpen(false)}
         className={({ isActive }) =>
           cn(
             "w-fit font-semibold text-muted-foreground transition-colors duration-300 hover:text-foreground",
@@ -37,7 +38,7 @@ export function NavBar() {
   }
 
   return (
-    <header className="container z-10 w-full bg-background py-2 shadow-sm">
+    <header className="container z-50 w-full bg-background py-2 shadow-sm">
       <div className="mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <span className="text-xl font-semibold">Jordan</span>
@@ -53,11 +54,12 @@ export function NavBar() {
       </div>
       <nav
         className={cn(
-          "grid gap-4 overflow-hidden transition-[max-height] duration-500 lg:hidden",
+          "grid w-full gap-4 overflow-hidden bg-background transition-[max-height] duration-500 lg:hidden",
           isMenuOpen ? "max-h-40" : "max-h-0",
+          absoluteDropdown && "absolute bg-background/50 backdrop-blur-md",
         )}
       >
-        <div className="grid gap-2 overflow-hidden pt-2">{getLinks()}</div>
+        <div className="grid gap-2 overflow-hidden py-2">{getLinks()}</div>
       </nav>
     </header>
   );

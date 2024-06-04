@@ -16,10 +16,10 @@ export function Home() {
   return (
     <main className="flex h-full w-full flex-col items-center justify-center gap-4 pt-10">
       <TypewriterEffect
-        className="text-muted-foreground"
+        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
         words={textToTypewriterWords(typewriterText)}
       />
-      <div className="text-4xl text-muted-foreground">
+      <div className="text-lg text-muted-foreground sm:text-xl md:text-2xl lg:text-3xl">
         I am passionate about
         <FlipWords words={flipWords} className="text-emerald-500" />
       </div>
