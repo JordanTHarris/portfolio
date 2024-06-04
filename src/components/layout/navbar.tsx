@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
 import { cn } from "@/lib/utils";
 import { Menu } from "lucide-react";
@@ -21,13 +21,18 @@ export function NavBar() {
 
   function getLinks() {
     return links.map((link) => (
-      <Link
+      <NavLink
         key={link.title}
         to={link.path}
-        className="font-semibold text-muted-foreground hover:text-foreground"
+        className={({ isActive }) =>
+          cn(
+            "w-fit font-semibold text-muted-foreground transition-colors duration-300 hover:text-foreground",
+            isActive && "text-foreground",
+          )
+        }
       >
         {link.title}
-      </Link>
+      </NavLink>
     ));
   }
 
