@@ -37,7 +37,7 @@ export function NavBar() {
   }
 
   return (
-    <header className="container w-full bg-background py-2 shadow-sm">
+    <header className="container z-10 w-full bg-background py-2 shadow-sm">
       <div className="mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <span className="text-xl font-semibold">Jordan</span>
