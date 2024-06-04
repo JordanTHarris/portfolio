@@ -8,7 +8,6 @@ export function ThemeToggle({ className }: { className?: string }) {
   const { resolvedTheme, setTheme } = useTheme();
 
   function toggleTheme() {
-    console.log(resolvedTheme);
     setTheme(resolvedTheme === "light" ? "dark" : "light");
   }
 
@@ -17,13 +16,13 @@ export function ThemeToggle({ className }: { className?: string }) {
       <Sun
         className={cn(
           className,
-          "absolute rotate-0 scale-75 text-amber-600 transition-all dark:-rotate-90 dark:scale-0"
+          "absolute rotate-0 scale-75 text-amber-600 transition-all dark:-rotate-90 dark:scale-0",
         )}
       />
       <Moon
         className={cn(
           className,
-          "absolute rotate-90 scale-0 text-indigo-400 transition-all dark:rotate-0 dark:scale-75"
+          "absolute rotate-90 scale-0 text-indigo-400 transition-all dark:rotate-0 dark:scale-75",
         )}
       />
       <span className="sr-only">Toggle theme</span>

@@ -7,7 +7,6 @@ import { ThemeProvider } from "@/components/providers/theme-provider.tsx";
 import { Home } from "@/routes/home.tsx";
 import { Projects } from "@/routes/projects";
 import { Contact } from "@/routes/contact";
-import { About } from "@/routes/about";
 
 const router = createBrowserRouter([
   {
@@ -21,10 +20,6 @@ const router = createBrowserRouter([
       {
         path: "/projects",
         element: <Projects />,
-      },
-      {
-        path: "/about",
-        element: <About />,
       },
       {
         path: "/contact",

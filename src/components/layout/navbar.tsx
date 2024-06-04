@@ -3,20 +3,22 @@ import { Button } from "@/components/ui/button";
 import { Link, NavLink } from "react-router-dom";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
 import { cn } from "@/lib/utils";
-import { Menu } from "lucide-react";
+import { Code2, Contact2, Home, Menu } from "lucide-react";
+import { useOutsideClick } from "@/lib/hooks/use-outside-click";
 
 export function NavBar({ absoluteDropdown = false }: { absoluteDropdown?: boolean }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const menuRef = useOutsideClick(() => setIsMenuOpen(false));
 
   function toggleMenu() {
     setIsMenuOpen((prev: boolean) => !prev);
   }
 
   const links = [
-    { title: "Home", path: "/" },
-    { title: "Projects", path: "/projects" },
-    { title: "About Me", path: "/about" },
-    { title: "Contact", path: "/contact" },
+    { title: "Home", path: "/", icon: <Home className="h-4 w-4" /> },
+    { title: "Projects", path: "/projects", icon: <Code2 className="h-4 w-4" /> },
+    { title: "Contact", path: "/contact", icon: <Contact2 className="h-4 w-4" /> },
   ];
 
   function getLinks() {
@@ -32,13 +34,16 @@ export function NavBar({ absoluteDropdown = false }: { absoluteDropdown?: boolea
           )
         }
       >
-        {link.title}
+        <div className="flex items-center gap-2">
+          {link.icon}
+          {link.title}
+        </div>
       </NavLink>
     ));
   }
 
   return (
-    <header className="container z-50 w-full bg-background py-2 shadow-sm">
+    <header className="container z-50 w-full bg-background py-2 shadow-sm" ref={menuRef}>
       <div className="mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <span className="text-xl font-semibold">Jordan</span>
