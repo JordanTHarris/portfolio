@@ -1,13 +1,13 @@
 import { Outlet } from "react-router-dom";
-import { NavBar } from "./navbar";
+import { NavBar } from "./navbar2";
 
 export function Layout() {
   return (
-    <div className="flex flex-col w-screen h-dvh">
+    <div className="flex h-dvh w-screen flex-col">
       <header>
         <NavBar />
       </header>
-      <main className="flex-1">
+      <main className="container flex-1">
         <Outlet />
       </main>
       <footer>©️ me 2023</footer>
