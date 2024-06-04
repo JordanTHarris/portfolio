@@ -26,10 +26,10 @@ export function NavBar({ absoluteDropdown = false }: { absoluteDropdown?: boolea
       <NavLink
         key={link.title}
         to={link.path}
-        onClick={() => setIsMenuOpen(false)}
+        // onClick={() => setIsMenuOpen(false)}
         className={({ isActive }) =>
           cn(
-            "w-fit font-semibold text-muted-foreground transition-colors duration-300 hover:text-foreground",
+            "w-fit font-mono font-semibold text-muted-foreground transition-colors duration-300 hover:text-foreground",
             isActive && "text-foreground",
           )
         }
@@ -46,7 +46,7 @@ export function NavBar({ absoluteDropdown = false }: { absoluteDropdown?: boolea
     <header className="container z-50 w-full bg-background py-2 shadow-sm" ref={menuRef}>
       <div className="mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <span className="text-xl font-semibold">Jordan</span>
+          <span className="font-mono text-xl">Jordan</span>
         </Link>
         <nav className="hidden items-center gap-6 lg:flex">{getLinks()}</nav>
         <div className="flex items-center gap-2">
