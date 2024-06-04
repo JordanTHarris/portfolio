@@ -9,7 +9,7 @@ export function Layout() {
       <ScrollArea className="container flex-1 overflow-y-auto overflow-x-hidden">
         <Outlet />
       </ScrollArea>
-      <footer className="container text-center text-sm text-muted-foreground">
+      <footer className="container pb-2 text-center text-sm text-muted-foreground">
         ©️ me 2024
       </footer>
     </div>

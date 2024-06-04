@@ -19,7 +19,7 @@ export function Home() {
         className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
         words={textToTypewriterWords(typewriterText)}
       />
-      <div className="text-center text-lg text-muted-foreground sm:text-xl md:text-2xl lg:text-3xl">
+      <div className="text-center text-lg text-muted-foreground duration-1000 animate-in fade-in zoom-in sm:text-xl md:text-2xl lg:text-3xl">
         I'm a software developer who is passionate about{" "}
         <FlipWords words={flipWords} className="text-emerald-500" />
       </div>
