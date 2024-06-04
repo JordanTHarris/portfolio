@@ -10,7 +10,9 @@ export function Layout() {
       <main className="container flex-1">
         <Outlet />
       </main>
-      <footer>©️ me 2023</footer>
+      <footer className="container text-center text-sm text-muted-foreground">
+        ©️ me 2024
+      </footer>
     </div>
   );
 }
