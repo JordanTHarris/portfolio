@@ -2,9 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Home } from "@/routes/home.tsx";
 import { Layout } from "@/components/layout/layout.tsx";
 import { ThemeProvider } from "@/components/providers/theme-provider.tsx";
+import { Home } from "@/routes/home.tsx";
+import { Projects } from "@/routes/projects";
+import { Contact } from "@/routes/contact";
+import { About } from "@/routes/about";
 
 const router = createBrowserRouter([
   {
@@ -16,8 +19,16 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: "/projects",
+        element: <Projects />,
+      },
+      {
         path: "/about",
-        element: <div>About</div>,
+        element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
     ],
   },
@@ -28,5 +39,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <ThemeProvider storageKey="vite-ui-theme">
       <RouterProvider router={router} />
     </ThemeProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

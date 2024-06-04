@@ -1,54 +1,59 @@
-import { Menu } from "lucide-react";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Button } from "../ui/button";
+import { ThemeToggle } from "@/components/shared/theme-toggle";
 import { cn } from "@/lib/utils";
-import { ThemeToggle } from "../shared/theme-toggle";
+import { Menu } from "lucide-react";
 
 export function NavBar() {
-  const [state, setState] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const menus = [
-    { title: "Home", path: "/your-path" },
-    { title: "Blog", path: "/your-path" },
-    { title: "About Us", path: "/your-path" },
-    { title: "Contact Us", path: "/your-path" },
+  function toggleMenu() {
+    setIsMenuOpen((prev: boolean) => !prev);
+  }
+
+  const links = [
+    { title: "Home", path: "/" },
+    { title: "Projects", path: "/projects" },
+    { title: "About Me", path: "/about" },
+    { title: "Contact", path: "/contact" },
   ];
 
+  function getLinks() {
+    return links.map((link) => (
+      <Link
+        key={link.title}
+        to={link.path}
+        className="font-semibold text-muted-foreground hover:text-foreground"
+      >
+        {link.title}
+      </Link>
+    ));
+  }
+
   return (
-    <nav className="bg-secondary w-full border-b md:border-0">
-      <div className="items-center px-4 max-w-full mx-auto md:flex">
-        <div className="flex items-center justify-between py-3 md:py-5 md:flex">
-          <Link to="/">
-            <h1 className="text-3xl font-bold text-purple-600">Logo</h1>
-          </Link>
-          <div className="flex gap-2 items-center">
-            <ThemeToggle />
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setState(!state)}
-              className="md:hidden"
-            >
-              <Menu />
-            </Button>
-          </div>
-        </div>
-        <div
-          className={cn(
-            "flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 transition-[height] duration-300",
-            state ? "h-fit block" : "h-0 hidden"
-          )}
-        >
-          <ul className="justify-end items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-            {menus.map((item, idx) => (
-              <li key={idx} className="text-gray-600 hover:text-indigo-600">
-                <Link to={item.path}>{item.title}</Link>
-              </li>
-            ))}
-          </ul>
+    <header className="container w-full bg-background py-2 shadow-sm">
+      <div className="mx-auto flex items-center justify-between">
+        <Link to="/" className="flex items-center gap-2">
+          <span className="text-xl font-semibold">Jordan</span>
+        </Link>
+        <nav className="hidden items-center gap-6 lg:flex">{getLinks()}</nav>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <Button variant="ghost" size="icon" onClick={toggleMenu} className="lg:hidden">
+            <Menu className="h-6 w-6" />
+            <span className="sr-only">Toggle menu</span>
+          </Button>
         </div>
       </div>
-    </nav>
+      <nav
+        className={cn(
+          "grid gap-4 overflow-hidden transition-[max-height] duration-500 lg:hidden",
+          isMenuOpen ? "max-h-40" : "max-h-0",
+        )}
+      >
+        <div className="grid gap-2 overflow-hidden pt-2">{getLinks()}</div>
+      </nav>
+    </header>
   );
 }
