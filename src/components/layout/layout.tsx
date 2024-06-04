@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
-import { NavBar } from "./navbar";
-import { ScrollArea } from "../ui/scroll-area";
+import { NavBar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export function Layout() {
   return (
@@ -9,8 +10,8 @@ export function Layout() {
       <ScrollArea className="container flex-1 overflow-y-auto overflow-x-hidden">
         <Outlet />
       </ScrollArea>
-      <footer className="container pb-2 text-center text-sm text-muted-foreground">
-        ©️ me 2024
+      <footer className="container">
+        <Footer />
       </footer>
     </div>
   );
