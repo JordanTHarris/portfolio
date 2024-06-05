@@ -1,4 +1,3 @@
-import { PinContainer } from "@/components/ui/3d-pin";
 import { FlipWords } from "@/components/ui/flip-words";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 
