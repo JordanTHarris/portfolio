@@ -5,9 +5,9 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 export function Layout() {
   return (
-    <div className="scrollbar-hide z-10 flex h-dvh max-h-dvh w-screen flex-col">
+    <div className="z-10 flex h-dvh max-h-dvh w-screen flex-col scrollbar-hide">
       <NavBar />
-      <ScrollArea className="container flex-1 overflow-y-auto overflow-x-hidden">
+      <ScrollArea className="mx-0 flex-1 overflow-y-auto overflow-x-hidden md:container md:mx-auto">
         <Outlet />
       </ScrollArea>
       <footer className="container">

@@ -1,3 +1,4 @@
+import { PinContainer } from "@/components/ui/3d-pin";
 import { FlipWords } from "@/components/ui/flip-words";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 
@@ -23,6 +24,7 @@ export function Home() {
         I'm a software developer who is passionate about{" "}
         <FlipWords words={flipWords} className="text-emerald-500" />
       </div>
+      <div className="pb-10" />
     </main>
   );
 }
