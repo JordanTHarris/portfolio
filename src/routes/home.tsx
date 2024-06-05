@@ -14,7 +14,7 @@ export function Home() {
   }
 
   return (
-    <main className="flex h-full w-full flex-col items-center justify-center gap-6 overflow-hidden py-10">
+    <main className="flex h-full w-full flex-col items-center justify-center gap-12 overflow-hidden py-10">
       <TypewriterEffect
         className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
         words={textToTypewriterWords(typewriterText)}
