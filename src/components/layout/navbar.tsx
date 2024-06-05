@@ -26,7 +26,7 @@ export function NavBar({ absoluteDropdown = false }: { absoluteDropdown?: boolea
       <NavLink
         key={link.title}
         to={link.path}
-        // onClick={() => setIsMenuOpen(false)}
+        onClick={() => setIsMenuOpen(false)}
         className={({ isActive }) =>
           cn(
             "w-fit font-mono font-semibold text-muted-foreground transition-colors duration-300 hover:text-foreground",
@@ -59,10 +59,10 @@ export function NavBar({ absoluteDropdown = false }: { absoluteDropdown?: boolea
       </div>
       <nav
         className={cn(
-          "grid w-screen gap-4 overflow-hidden bg-background transition-[max-height] duration-500 ease-out lg:hidden",
+          "grid w-full gap-4 overflow-hidden bg-background transition-[max-height] duration-500 ease-out lg:hidden",
           isMenuOpen ? "max-h-40" : "max-h-0",
           absoluteDropdown &&
-            "container absolute left-0 bg-background/50 backdrop-blur-md",
+            "container absolute left-0 right-0 bg-background/50 backdrop-blur-md",
         )}
       >
         <div className="grid gap-2 overflow-hidden py-2">{getLinks()}</div>
