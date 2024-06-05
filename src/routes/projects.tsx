@@ -16,6 +16,8 @@ export function Projects() {
             <img
               src={noteAppScreenshot}
               alt="note-app screenshot"
+              width={944}
+              height={725}
               className="rounded-md object-contain"
             />
             <p className="mb-2 mt-4 text-base sm:text-xl">Note App</p>
@@ -30,6 +32,8 @@ export function Projects() {
             <img
               src={noteAppScreenshot}
               alt="note-app screenshot"
+              width={944}
+              height={725}
               className="rounded-md object-contain"
             />
             <p className="mb-2 mt-4 text-base sm:text-xl">Note App</p>
@@ -44,6 +48,8 @@ export function Projects() {
             <img
               src={noteAppScreenshot}
               alt="note-app screenshot"
+              width={944}
+              height={725}
               className="rounded-md object-contain"
             />
             <p className="mb-2 mt-4 text-base sm:text-xl">Note App</p>
