@@ -48,10 +48,10 @@ export function NavBar({ absoluteDropdown = false }: { absoluteDropdown?: boolea
         <Link to="/" className="flex items-center gap-2">
           <span className="font-mono text-xl">Jordan</span>
         </Link>
-        <nav className="hidden items-center gap-6 lg:flex">{getLinks()}</nav>
+        <nav className="hidden items-center gap-6 md:flex">{getLinks()}</nav>
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <Button variant="ghost" size="icon" onClick={toggleMenu} className="lg:hidden">
+          <Button variant="ghost" size="icon" onClick={toggleMenu} className="md:hidden">
             <Menu
               className={cn(
                 "h-6 w-6 transition-[transform] duration-300 ease-out",
@@ -64,7 +64,7 @@ export function NavBar({ absoluteDropdown = false }: { absoluteDropdown?: boolea
       </div>
       <nav
         className={cn(
-          "grid w-full gap-4 overflow-hidden bg-background transition-[max-height] duration-500 ease-out lg:hidden",
+          "grid w-full gap-4 overflow-hidden bg-background transition-[max-height] duration-500 ease-out md:hidden",
           isMenuOpen ? "max-h-40" : "max-h-0",
           absoluteDropdown &&
             "container absolute left-0 right-0 bg-background/50 backdrop-blur-md",
