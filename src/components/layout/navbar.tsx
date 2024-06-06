@@ -43,9 +43,16 @@ export function NavBar({ absoluteDropdown = false }: { absoluteDropdown?: boolea
   }
 
   return (
-    <header className="container z-50 w-full bg-background py-2 shadow-sm" ref={menuRef}>
-      <div className="mx-auto flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
+    <header
+      className="z-50 mx-0 w-full bg-background px-2 py-2 shadow-sm md:container md:mx-auto"
+      ref={menuRef}
+    >
+      <div className="flex items-center justify-between">
+        <Link
+          to="/"
+          onClick={() => setIsMenuOpen(false)}
+          className="flex items-center gap-2"
+        >
           <span className="font-mono text-xl">Jordan</span>
         </Link>
         <nav className="hidden items-center gap-6 md:flex">{getLinks()}</nav>

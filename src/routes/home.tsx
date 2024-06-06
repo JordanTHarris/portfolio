@@ -14,7 +14,7 @@ export function Home() {
   }
 
   return (
-    <main className="flex h-full w-full flex-col items-center justify-center gap-12 overflow-y-auto overflow-x-hidden">
+    <main className="mx-0 flex h-full w-full flex-col items-center justify-center gap-12 overflow-y-auto overflow-x-hidden px-2 md:container md:mx-auto">
       <TypewriterEffect
         className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
         words={textToTypewriterWords(typewriterText)}

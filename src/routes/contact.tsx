@@ -60,7 +60,7 @@ export function Contact() {
   }
 
   return (
-    <main className="flex h-full w-full flex-col items-center justify-center gap-12 overflow-y-auto overflow-x-hidden">
+    <main className="mx-0 flex h-full w-full flex-col items-center justify-center gap-12 overflow-y-auto overflow-x-hidden px-2 md:container md:mx-auto">
       <Card className="w-full max-w-lg transition-none duration-1000 animate-in fade-in">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="">
