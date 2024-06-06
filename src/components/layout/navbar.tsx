@@ -52,7 +52,12 @@ export function NavBar({ absoluteDropdown = false }: { absoluteDropdown?: boolea
         <div className="flex items-center gap-2">
           <ThemeToggle />
           <Button variant="ghost" size="icon" onClick={toggleMenu} className="lg:hidden">
-            <Menu className="h-6 w-6" />
+            <Menu
+              className={cn(
+                "h-6 w-6 transition-[transform] duration-300 ease-out",
+                isMenuOpen ? "rotate-90" : "rotate-0",
+              )}
+            />
             <span className="sr-only">Toggle menu</span>
           </Button>
         </div>

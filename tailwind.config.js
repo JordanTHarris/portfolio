@@ -76,6 +76,7 @@ module.exports = {
       transitionProperty: {
         height: "height",
         "max-height": "max-height",
+        transform: "transform",
       },
     },
   },
