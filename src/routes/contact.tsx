@@ -22,6 +22,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Textarea } from "@/components/ui/textarea";
+import { Loader2 } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -119,7 +120,13 @@ export function Contact() {
               />
             </CardContent>
             <CardFooter className="justify-end">
-              <Button type="submit">Submit</Button>
+              <Button className="w-full sm:w-20" type="submit">
+                {form.formState.isSubmitting ? (
+                  <Loader2 className="animate-spin" />
+                ) : (
+                  "Send"
+                )}
+              </Button>
             </CardFooter>
           </form>
         </Form>
