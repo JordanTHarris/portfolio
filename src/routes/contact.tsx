@@ -40,16 +40,21 @@ export function Contact() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    const templateParams = {
+      from_name: values.name,
+      from_email: values.email,
+      message: values.message,
+    };
     try {
+      await emailjs.init({ publicKey: import.meta.env.VITE_EMAIL_PUBLIC_KEY! });
       await emailjs.send(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
-        values,
-        "YOUR_PUBLIC_KEY",
+        import.meta.env.VITE_EMAIL_SERVICE_ID!,
+        import.meta.env.VITE_EMAIL_TEMPLATE_ID!,
+        templateParams,
       );
       toast.success("Email sent successfully!");
     } catch (error) {
-      toast.error("Error sending email");
+      toast.error("Error sending email: " + error);
     }
   }
 
