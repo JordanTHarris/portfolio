@@ -6,7 +6,7 @@ import { Layout } from "@/components/layout/layout.tsx";
 import { ThemeProvider } from "@/components/providers/theme-provider.tsx";
 import { Home } from "@/routes/home.tsx";
 import { Projects } from "@/routes/projects";
-import { Contact } from "@/routes/contact";
+import { Contact } from "./routes/contact";
 
 const router = createBrowserRouter([
   {
