@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { NavBar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { Toaster } from "@/components/ui/sonner";
 
 export function Layout() {
   return (
@@ -8,6 +9,7 @@ export function Layout() {
       <NavBar />
       <Outlet />
       <Footer />
+      <Toaster richColors />
     </div>
   );
 }
