@@ -29,12 +29,12 @@ export function NavBar({ absoluteDropdown = false }: { absoluteDropdown?: boolea
         onClick={() => setIsMenuOpen(false)}
         className={({ isActive }) =>
           cn(
-            "w-fit font-mono font-semibold text-muted-foreground transition-colors duration-300 hover:text-foreground",
+            "rounded-md py-2 font-mono font-semibold text-muted-foreground transition-colors duration-200 hover:text-accent-foreground",
             isActive && "text-foreground",
           )
         }
       >
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 px-2">
           {link.icon}
           {link.title}
         </div>
@@ -44,10 +44,10 @@ export function NavBar({ absoluteDropdown = false }: { absoluteDropdown?: boolea
 
   return (
     <header
-      className="z-50 mx-0 w-full bg-background px-2 py-2 shadow-sm md:container md:mx-auto"
+      className="z-50 mx-0 w-full bg-background shadow-sm md:container md:mx-auto"
       ref={menuRef}
     >
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between px-2 py-2 md:px-0">
         <Link
           to="/"
           onClick={() => setIsMenuOpen(false)}
@@ -55,7 +55,7 @@ export function NavBar({ absoluteDropdown = false }: { absoluteDropdown?: boolea
         >
           <span className="font-mono text-xl">Jordan</span>
         </Link>
-        <nav className="hidden items-center gap-6 md:flex">{getLinks()}</nav>
+        <nav className="hidden items-center md:flex">{getLinks()}</nav>
         <div className="flex items-center gap-2">
           <ThemeToggle />
           <Button variant="ghost" size="icon" onClick={toggleMenu} className="md:hidden">
@@ -71,13 +71,12 @@ export function NavBar({ absoluteDropdown = false }: { absoluteDropdown?: boolea
       </div>
       <nav
         className={cn(
-          "grid w-full gap-4 overflow-hidden bg-background transition-[max-height] duration-500 ease-out md:hidden",
+          "grid w-full overflow-hidden bg-background transition-[max-height] duration-500 ease-out md:hidden",
           isMenuOpen ? "max-h-40" : "max-h-0",
-          absoluteDropdown &&
-            "container absolute left-0 right-0 bg-background/50 backdrop-blur-md",
+          absoluteDropdown && "absolute left-0 right-0 bg-background/50 backdrop-blur-md",
         )}
       >
-        <div className="grid gap-2 overflow-hidden py-2">{getLinks()}</div>
+        <div className="grid overflow-hidden">{getLinks()}</div>
       </nav>
     </header>
   );

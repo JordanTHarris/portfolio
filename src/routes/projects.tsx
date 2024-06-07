@@ -12,7 +12,7 @@ export function Projects() {
           words={[{ text: "<MyProjects/>", className: "font-mono" }]}
         />
 
-        <div className="grid auto-cols-auto grid-cols-1 gap-6 px-5 py-12 duration-1000 animate-in fade-in zoom-in md:grid-cols-2 xl:grid-cols-3 xl:pt-24">
+        <div className="grid auto-cols-auto grid-cols-1 gap-6 px-5 py-12 duration-1000 animate-in fade-in zoom-in slide-in-from-top-1/2 md:grid-cols-2 xl:grid-cols-3 xl:pt-24">
           <a href="https://github.com/JordanTHarris/note-app" target="_blank">
             <BackgroundGradient className="max-w-sm rounded-[22px] bg-zinc-100 p-4 transition-[transform] duration-300 hover:scale-105 dark:bg-zinc-900">
               <img
