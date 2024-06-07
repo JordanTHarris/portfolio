@@ -46,16 +46,18 @@ export function Contact() {
       from_email: values.email,
       message: values.message,
     };
+
     try {
-      await emailjs.init({ publicKey: import.meta.env.VITE_EMAIL_PUBLIC_KEY! });
+      emailjs.init({ publicKey: import.meta.env.VITE_EMAIL_PUBLIC_KEY! });
       await emailjs.send(
         import.meta.env.VITE_EMAIL_SERVICE_ID!,
         import.meta.env.VITE_EMAIL_TEMPLATE_ID!,
         templateParams,
       );
+      form.reset();
       toast.success("Email sent successfully!");
     } catch (error) {
-      toast.error("Error sending email: " + error);
+      toast.error("Error sending email");
     }
   }
 
