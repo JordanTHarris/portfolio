@@ -78,11 +78,13 @@ export function Contact() {
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Name</FormLabel>
+                    <div className="flex justify-between">
+                      <FormLabel>Name</FormLabel>
+                      <FormMessage className="leading-none" />
+                    </div>
                     <FormControl>
                       <Input placeholder="Your name" {...field} />
                     </FormControl>
-                    <FormMessage />
                   </FormItem>
                 )}
               />
@@ -91,11 +93,13 @@ export function Contact() {
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Email</FormLabel>
+                    <div className="flex justify-between">
+                      <FormLabel>Email</FormLabel>
+                      <FormMessage className="leading-none" />
+                    </div>
                     <FormControl>
                       <Input placeholder="someone@example.com" {...field} />
                     </FormControl>
-                    <FormMessage />
                   </FormItem>
                 )}
               />
@@ -104,7 +108,10 @@ export function Contact() {
                 name="message"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Message</FormLabel>
+                    <div className="flex justify-between">
+                      <FormLabel>Message</FormLabel>
+                      <FormMessage className="leading-none" />
+                    </div>
                     <FormControl>
                       <Textarea
                         className="min-h-32"
@@ -112,7 +119,6 @@ export function Contact() {
                         {...field}
                       />
                     </FormControl>
-                    <FormMessage />
                   </FormItem>
                 )}
               />
