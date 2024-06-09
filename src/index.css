@@ -74,4 +74,19 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    @apply border shadow-[inset_0_0_0px_1000px_theme(colors.secondary.DEFAULT)];
+    @apply text-foreground;
+    -webkit-text-fill-color: theme("colors.foreground");
+    transition: background-color 5000s ease-in-out 0s;
+  }
 }
