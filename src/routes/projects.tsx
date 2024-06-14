@@ -6,7 +6,7 @@ import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 export function Projects() {
   return (
     <ScrollArea className="flex-1 overflow-y-auto overflow-x-hidden">
-      <main className="mx-0 my-10 flex h-full w-full flex-col items-center justify-center overflow-hidden md:container md:mx-auto xl:mt-28">
+      <main className="mx-0 mb-20 mt-14 flex h-full w-full flex-col items-center justify-center overflow-hidden md:container md:mx-auto xl:mt-28">
         <TypewriterEffect
           className="text-center font-mono text-3xl md:text-4xl lg:text-5xl"
           words={[{ text: "<MyProjects/>", className: "font-mono" }]}
