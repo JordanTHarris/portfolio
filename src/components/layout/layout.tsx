@@ -9,7 +9,9 @@ export function Layout() {
     <div className="flex h-dvh max-h-dvh w-screen flex-col scrollbar-hide">
       <TooltipProvider>
         <NavBar />
-        <Outlet />
+        <main className="flex w-full flex-1 flex-col items-center gap-12 overflow-y-auto overflow-x-hidden pb-20 pt-10 md:container md:mx-auto">
+          <Outlet />
+        </main>
         <Footer />
         <Toaster richColors />
       </TooltipProvider>

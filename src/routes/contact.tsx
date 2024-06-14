@@ -62,79 +62,77 @@ export function Contact() {
   }
 
   return (
-    <main className="mx-0 flex h-full w-full flex-col items-center justify-center gap-12 overflow-y-auto overflow-x-hidden px-2 md:container md:mx-auto">
-      <Card className="w-full max-w-lg transition-none duration-1000 animate-in fade-in">
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="">
-            <CardHeader>
-              <CardTitle>Get in touch</CardTitle>
-              <CardDescription>
-                Have a question or want to work together? Fill out the form below.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="grid gap-4">
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <div className="flex justify-between">
-                      <FormLabel>Name</FormLabel>
-                      <FormMessage className="leading-none" />
-                    </div>
-                    <FormControl>
-                      <Input placeholder="Your name" {...field} />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <div className="flex justify-between">
-                      <FormLabel>Email</FormLabel>
-                      <FormMessage className="leading-none" />
-                    </div>
-                    <FormControl>
-                      <Input placeholder="someone@example.com" {...field} />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="message"
-                render={({ field }) => (
-                  <FormItem>
-                    <div className="flex justify-between">
-                      <FormLabel>Message</FormLabel>
-                      <FormMessage className="leading-none" />
-                    </div>
-                    <FormControl>
-                      <Textarea
-                        className="min-h-32"
-                        placeholder="Enter your message"
-                        {...field}
-                      />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
-            </CardContent>
-            <CardFooter className="justify-end">
-              <Button className="w-full sm:w-20" type="submit">
-                {form.formState.isSubmitting ? (
-                  <Loader2 className="animate-spin" />
-                ) : (
-                  "Send"
-                )}
-              </Button>
-            </CardFooter>
-          </form>
-        </Form>
-      </Card>
-    </main>
+    <Card className="m-auto w-full max-w-lg transition-none duration-1000 animate-in fade-in">
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="">
+          <CardHeader>
+            <CardTitle>Get in touch</CardTitle>
+            <CardDescription>
+              Have a question or want to work together? Fill out the form below.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="grid gap-4">
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem>
+                  <div className="flex justify-between">
+                    <FormLabel>Name</FormLabel>
+                    <FormMessage className="leading-none" />
+                  </div>
+                  <FormControl>
+                    <Input placeholder="Your name" {...field} />
+                  </FormControl>
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <div className="flex justify-between">
+                    <FormLabel>Email</FormLabel>
+                    <FormMessage className="leading-none" />
+                  </div>
+                  <FormControl>
+                    <Input placeholder="someone@example.com" {...field} />
+                  </FormControl>
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="message"
+              render={({ field }) => (
+                <FormItem>
+                  <div className="flex justify-between">
+                    <FormLabel>Message</FormLabel>
+                    <FormMessage className="leading-none" />
+                  </div>
+                  <FormControl>
+                    <Textarea
+                      className="min-h-32"
+                      placeholder="Enter your message"
+                      {...field}
+                    />
+                  </FormControl>
+                </FormItem>
+              )}
+            />
+          </CardContent>
+          <CardFooter className="justify-end">
+            <Button className="w-full sm:w-20" type="submit">
+              {form.formState.isSubmitting ? (
+                <Loader2 className="animate-spin" />
+              ) : (
+                "Send"
+              )}
+            </Button>
+          </CardFooter>
+        </form>
+      </Form>
+    </Card>
   );
 }

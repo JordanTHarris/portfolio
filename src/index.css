@@ -63,13 +63,15 @@
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 238.7 83.5% 66.7%;
+
+    color-scheme: dark;
   }
 }
 
 @layer base {
   * {
     @apply border-border;
-    @apply scrollbar-hide;
+    /* @apply scrollbar-hide; */
   }
   body {
     @apply bg-background text-foreground;
