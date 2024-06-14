@@ -51,12 +51,12 @@ export function NavBar({ absoluteDropdown = false }: { absoluteDropdown?: boolea
         <Link
           to="/"
           onClick={() => setIsMenuOpen(false)}
-          className="flex items-center gap-2"
+          className="flex w-32 items-center gap-2"
         >
           <span className="font-mono text-xl">Jordan</span>
         </Link>
         <nav className="hidden items-center md:flex">{getLinks()}</nav>
-        <div className="flex items-center gap-2">
+        <div className="flex w-32 items-center justify-end gap-2">
           <ThemeToggle />
           <Button variant="ghost" size="icon" onClick={toggleMenu} className="md:hidden">
             <Menu
