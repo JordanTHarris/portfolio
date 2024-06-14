@@ -1,6 +1,6 @@
 import { DevIconCloud } from "@/components/shared/dev-icon-cloud";
-import { FlipWords } from "@/components/ui/flip-words";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
+import WordRotate from "@/components/ui/word-rotate";
 import { User2 } from "lucide-react";
 
 export function Home() {
@@ -24,7 +24,11 @@ export function Home() {
       <div className="text-center text-lg text-muted-foreground duration-1000 animate-in fade-in zoom-in sm:text-xl md:text-2xl lg:text-3xl">
         I'm a software developer <br />
         who is passionate about{" "}
-        <FlipWords words={flipWords} className="text-emerald-500" />
+        <WordRotate
+          className="inline text-emerald-500"
+          words={flipWords}
+          duration={3000}
+        />
       </div>
       <div className="mb-auto grid grid-cols-1 gap-5 md:mt-10 md:grid-cols-2 md:gap-10">
         <div className="flex h-72 w-72 items-center justify-center rounded-3xl border bg-muted transition-none duration-1000 animate-in fade-in zoom-in md:h-80 md:w-80 lg:h-96 lg:w-96">
