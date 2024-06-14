@@ -2,6 +2,7 @@ import { DevIconCloud } from "@/components/shared/dev-icon-cloud";
 import { FlipWords } from "@/components/ui/flip-words";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
+import { User2 } from "lucide-react";
 
 export function Home() {
   const typewriterText = "Hi, my name is Jordan";
@@ -27,7 +28,12 @@ export function Home() {
           who is passionate about{" "}
           <FlipWords words={flipWords} className="text-emerald-500" />
         </div>
-        <DevIconCloud className="mt-5 h-72 w-72 duration-1000 animate-in fade-in zoom-in md:h-96 md:w-96" />
+        <div className="grid grid-cols-1 gap-5 md:mt-10 md:grid-cols-2 md:gap-10">
+          <div className="flex h-72 w-72 items-center justify-center rounded-[200px] border bg-secondary transition-all duration-300 hover:rounded-[120px] md:h-80 md:w-80 lg:h-96 lg:w-96">
+            <User2 className="h-2/3 w-2/3 text-foreground" />
+          </div>
+          <DevIconCloud className="h-72 w-72 duration-1000 animate-in fade-in zoom-in md:h-80 md:w-80 lg:h-96 lg:w-96" />
+        </div>
         <div className="pb-10" />
       </main>
     </ScrollArea>
