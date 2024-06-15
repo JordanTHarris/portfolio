@@ -82,7 +82,7 @@ export function Contact() {
                     <FormMessage className="leading-none" />
                   </div>
                   <FormControl>
-                    <Input placeholder="Your name" {...field} />
+                    <Input autoComplete="name" placeholder="Your name" {...field} />
                   </FormControl>
                 </FormItem>
               )}
@@ -97,7 +97,11 @@ export function Contact() {
                     <FormMessage className="leading-none" />
                   </div>
                   <FormControl>
-                    <Input placeholder="someone@example.com" {...field} />
+                    <Input
+                      autoComplete="email"
+                      placeholder="someone@example.com"
+                      {...field}
+                    />
                   </FormControl>
                 </FormItem>
               )}
