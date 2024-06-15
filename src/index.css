@@ -28,7 +28,7 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 5.9% 90%;
+    --border: 240 4.9% 83.9%;
     --input: 240 5.9% 90%;
     --ring: 238.7 83.5% 66.7%;
 
@@ -69,10 +69,13 @@
 @layer base {
   * {
     @apply border-border;
-    /* @apply scrollbar-hide; */
+    @apply scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thin scrollbar-thumb-border scrollbar-track-secondary scrollbar-corner-secondary;
   }
   body {
     @apply bg-background text-foreground;
+  }
+  .dark {
+    color-scheme: dark;
   }
 
   input:-webkit-autofill,
@@ -88,20 +91,5 @@
     @apply text-foreground;
     -webkit-text-fill-color: theme("colors.foreground");
     transition: background-color 5000s ease-in-out 0s;
-  }
-
-  ::-webkit-scrollbar {
-    height: 12px;
-    width: 10px;
-    background: theme("colors.background");
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: theme("colors.border");
-    -webkit-border-radius: 1ex;
-  }
-
-  ::-webkit-scrollbar-corner {
-    background: theme("colors.background");
   }
 }
