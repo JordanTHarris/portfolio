@@ -64,10 +64,6 @@
     --input: 240 3.7% 15.9%;
     --ring: 238.7 83.5% 66.7%;
   }
-
-  .dark {
-    color-scheme: dark;
-  }
 }
 
 @layer base {
@@ -92,5 +88,20 @@
     @apply text-foreground;
     -webkit-text-fill-color: theme("colors.foreground");
     transition: background-color 5000s ease-in-out 0s;
+  }
+
+  ::-webkit-scrollbar {
+    height: 12px;
+    width: 10px;
+    background: theme("colors.background");
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: theme("colors.border");
+    -webkit-border-radius: 1ex;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: theme("colors.background");
   }
 }
