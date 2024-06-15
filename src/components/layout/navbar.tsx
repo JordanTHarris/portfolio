@@ -30,7 +30,7 @@ export function NavBar({ absoluteDropdown = false }: { absoluteDropdown?: boolea
         className={({ isActive }) =>
           cn(
             "rounded-md py-2 font-mono font-semibold text-muted-foreground transition-colors duration-200 hover:text-accent-foreground",
-            isActive && "text-foreground",
+            isActive && "text-foreground hover:text-foreground",
           )
         }
       >
@@ -53,7 +53,7 @@ export function NavBar({ absoluteDropdown = false }: { absoluteDropdown?: boolea
           onClick={() => setIsMenuOpen(false)}
           className="flex w-32 items-center gap-2"
         >
-          <span className="font-mono text-xl">Jordan</span>
+          <span className="font-mono text-2xl tracking-widest">JH</span>
         </Link>
         <nav className="hidden items-center md:flex">{getLinks()}</nav>
         <div className="flex w-32 items-center justify-end gap-2">

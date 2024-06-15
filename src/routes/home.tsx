@@ -31,7 +31,7 @@ export function Home() {
         />
       </div>
       <div className="mb-auto grid grid-cols-1 gap-5 md:mt-10 md:grid-cols-2 md:gap-10">
-        <div className="flex h-72 w-72 items-center justify-center rounded-3xl border bg-muted transition-none duration-1000 animate-in fade-in zoom-in md:h-80 md:w-80 lg:h-96 lg:w-96">
+        <div className="flex h-72 w-72 items-center justify-center rounded-3xl border bg-secondary transition-none duration-1000 animate-in fade-in zoom-in md:h-80 md:w-80 lg:h-96 lg:w-96">
           <User2 className="h-2/3 w-2/3 text-muted-foreground" />
         </div>
         <DevIconCloud className="h-72 w-72 duration-1000 animate-in fade-in zoom-in md:h-80 md:w-80 lg:h-96 lg:w-96" />

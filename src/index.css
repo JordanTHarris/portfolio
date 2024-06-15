@@ -48,7 +48,7 @@
     --primary: 238.7 83.5% 66.7%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 240 3.7% 15.9%;
+    --secondary: 240 5.9% 10%;
     --secondary-foreground: 0 0% 98%;
 
     --muted: 240 3.7% 15.9%;
@@ -63,7 +63,9 @@
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 238.7 83.5% 66.7%;
+  }
 
+  .dark {
     color-scheme: dark;
   }
 }
