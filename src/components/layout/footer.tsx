@@ -12,11 +12,7 @@ export function Footer() {
         <Github className="h-5 w-5" />
       </a>
       <Separator orientation="vertical" className="h-5" />
-      <a
-        className="text-muted-foreground hover:text-foreground"
-        href="https://github.com/JordanTHarris"
-        target="_blank"
-      >
+      <a className="text-muted-foreground hover:text-foreground" href="#">
         <Linkedin className="h-5 w-5" />
       </a>
     </div>
